@@ -47,3 +47,52 @@ function addTax (html){
             return slicedArr
         }
 
+
+        //if submitted set_body got a table part like below with the data addTax function(above)
+        form.addEventListener('submit', (e) => {
+            e.preventDefault() //prevent default needed not to refresh after submitting (form doesn't have any method in HTML)
+        // Template literal as a string to append to set_body
+            let html = `
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <th scope="row"
+                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                ${addTax(form.product.value)} 
+             </th>
+                                
+        </tr>
+            `
+             set_body.innerHTML += html
+             //After adding it to set_body the value of the input in the form should be removed--> set to ""           
+             form.product.value = ""
+              
+            //reduce func to add all the taxes and prices which pushed into them (see above) 
+             const allTaxes = taxes.reduce((acc,val)=> {
+                return acc + val
+             },0)
+
+             const allPrices = prices.reduce((acc,val)=> {
+                return acc + val
+             },0)
+
+         
+             // Sales tax and total will be shown at the bottom of the table
+
+             // ${(Math.ceil(allTaxes * 20) / 20).toFixed(2)}  in order to round to 0.05 n% tax rate
+             let allTax = `
+             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+             <th scope="row"
+                 class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                 ### SALES TAXES ${(Math.ceil(allTaxes * 20) / 20).toFixed(2)} 
+             </th>
+          
+             <td class="px-6 py-4">
+                 ### TOTAL ${(Math.ceil(allPrices * 20) / 20).toFixed(2)}
+             </td>
+         </tr>
+             `
+              set_final.innerHTML = allTax
+                         
+
+        
+        });
+
