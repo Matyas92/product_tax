@@ -52,6 +52,11 @@ function addTax (html){
         form.addEventListener('submit', (e) => {
             e.preventDefault() //prevent default needed not to refresh after submitting (form doesn't have any method in HTML)
         // Template literal as a string to append to set_body
+
+        //Set result to visible
+        set_final.style.visibility = "visible";
+
+
             let html = `
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
             <th scope="row"
