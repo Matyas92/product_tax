@@ -1,4 +1,4 @@
-- Coding challenge for itemis CC Cloud & Enterprise recruiting
+## Coding challenge for itemis CC Cloud & Enterprise recruiting
 
 - product_tax
 Gives the sales tax
