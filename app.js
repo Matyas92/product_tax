@@ -5,6 +5,9 @@ const form  = document.getElementById('input');
 set_body = document.querySelector(".set_body")
 set_final = document.querySelector(".final")
 
+
+const delete_all = document.querySelector("#delete_all")
+
 //Creating two arrays, nums will be pushed into
 const prices = []
 const taxes = []
@@ -96,8 +99,18 @@ function addTax (html){
          </tr>
              `
               set_final.innerHTML = allTax
+
                          
 
         
         });
+
+        //Delete all when clicked to delete button
+        delete_all.addEventListener("click", () => {
+
+            set_final.innerHTML = ""
+            set_body.innerHTML = ""
+
+        });
+
 
