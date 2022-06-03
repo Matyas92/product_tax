@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper flex justify-center">
+
+        <!-- Input part of the UI -->
+
+        <div class="box flex flex-col w-6/12">
+
+            <form id="input" class="flex flex-col mt-9">
+
+                <div class="mb-6">
+                    <label for="product" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Name of
+                        the product</label>
+                    <input name="product" type="product" id="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="### INPUT" required="">
+                </div>
+
+                    <div>
+                 
+                </div>
+
+
+                <input type="submit"
+                    class="mt-5 text-white bg-[#15803d] hover:bg-[#064e3b] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"></button>
+            </form>
+
+
+
+                <!-- Output part of it as a table  -->
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                ### OUTPUT
+                            </th>
+                        
+                          
+                        </tr>
+                    </thead>
+                    <tbody class="set_body">
+                       
+                  
+                     
+                    </tbody>
+                        <!-- Final overview of taxes -->
+                    <tbody class="final">
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                ### TOTAL
+                            </th>
+                         
+                            <td class="px-6 py-4">
+                                ### SALES TAXES
+                            </td>
+                        </tr>
+                  
+                     
+                    </tbody>
+
+                </table>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
